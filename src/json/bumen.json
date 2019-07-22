@@ -1,0 +1,63 @@
+var bumenRes = {
+    "data": {
+        "department": [{
+            "did": "a1",
+            "dname": "华北大魏有限公司",
+            "person": [{
+                "pid": "p1",
+                "pavatar": "images/userpic.png",
+                "pname": "曹操"
+            }],
+            "department": [{
+                "did": "b1",
+                "dname": "国务院",
+                "person": [
+                    { "pid": "p2", "pavatar": "images/userpic.png", "pname": "卫臻" },
+                    { "pid": "p3", "pavatar": "images/userpic.png", "pname": "司马孚" },
+                    { "pid": "p4", "pavatar": "images/userpic.png", "pname": "卢毓" }
+                ]
+            }, {
+                "did": "b2",
+                "dname": "司法部",
+                "person": [
+                    { "pid": "p5", "pavatar": "images/userpic.png", "pname": "王朗" },
+                    { "pid": "p6", "pavatar": "images/userpic.png", "pname": "曹魏" },
+                    { "pid": "p7", "pavatar": "images/userpic.png", "pname": "陈群" }
+                ]
+            }, {
+                "did": "b3",
+                "dname": "全国武装部",
+                "person": [
+                    { "pid": "p8", "pavatar": "images/userpic.png", "pname": "华歆" },
+                    { "pid": "p9", "pavatar": "images/userpic.png", "pname": "曹仁" },
+                    { "pid": "p10", "pavatar": "images/userpic.png", "pname": "曹真" }
+                ],
+                "department": [{
+                    "did": "c1",
+                    "dname": "中央禁军",
+                    "person": [
+                        { "pid": "p11", "pavatar": "images/userpic.png", "pname": "蒋济" },
+                        { "pid": "p12", "pavatar": "images/userpic.png", "pname": "邓艾" }
+                    ]
+                }, {
+                    "did": "c2",
+                    "dname": "皇城保安",
+                    "person": [
+                        { "pid": "p13", "pavatar": "images/userpic.png", "pname": "董昭" },
+                        { "pid": "p14", "pavatar": "images/userpic.png", "pname": "高柔" }
+                    ]
+                }, {
+                    "did": "c3",
+                    "dname": "战车部队",
+                    "person": [
+                        { "pid": "p15", "pavatar": "images/userpic.png", "pname": "王凌" },
+                        { "pid": "p16", "pavatar": "images/userpic.png", "pname": "王祥" },
+                        { "pid": "p17", "pavatar": "images/userpic.png", "pname": "荀顗" }
+                    ]
+                }]
+            }]
+        }]
+    },
+    "errcode": 0,
+    "errmsg": "成功"
+}

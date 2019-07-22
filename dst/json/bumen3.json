@@ -1,0 +1,28 @@
+/* 
+    点进来的部门页接口
+    请求参数： depId部门ID
+
+*/
+
+// 返回如下：
+var bumenRes = {
+    "data": {
+        "preDep": { // 上一级部门
+            "id": "b3",
+            "name": "全国武装部"
+        },
+        "currDep": { // 当前部门
+            "id": "c1",
+            "name": "中央禁军"
+        },
+        "department": [], // 没有子部门了
+        "people": [ // 返回为当前部门的人员
+            { "id": "p4", "avatar": "", "name": "蒋济" },
+            { "id": "p5", "avatar": "", "name": "邓艾" },
+            { "id": "p6", "avatar": "", "name": "荀顗" },
+            { "id": "p7", "avatar": "", "name": "董昭" }
+        ]
+    },
+    "errcode": 0,
+    "errmsg": "成功"
+}

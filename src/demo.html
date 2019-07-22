@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ywork API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <style>
+      /*html {
+        font-size: 20px;
+    }*/
+
+      .btn {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        background-color: #ada;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .btn::-webkit-input-placeholder {
+        color: #000;
+        font-size: 18px;
+        height: 40px;
+        line-height: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="btn" id="reload">ywork.js API list</p>
+    <p class="btn" id="alert">alert</p>
+    <p class="btn" id="confirm">confirm</p>
+    <p class="btn" id="succ-toast">Succ toast</p>
+    <p class="btn" id="fail-toast">Fail toast</p>
+    <p class="btn" id="showLoading">showLoading</p>
+    <p class="btn" id="hideLoading">hideLoading</p>
+    <p class="btn" id="actionSheet">actionSheet</p>
+    <p class="btn" id="updateShow">updateShow</p>
+    <p class="btn" id="setTitle">setTitle</p>
+    <p class="btn" id="friendChoose">friendChoose</p>
+    <p class="btn" id="complexChoose">complexChoose</p>
+    <p class="btn" id="shareToWechatFriend">shareToWechatFriend</p>
+    <p class="btn" id="vlock">vlock</p>
+  </body>
+  <script src="./js/ywork.js"></script>
+  <script src="./json/bumen1.json"></script>
+  <script src="./json/friendChoose.json"></script>
+  <script>
+    window.leoType = 1
+
+    document.getElementById('reload').onclick = function() {
+      location.reload()
+    }
+
+    document.getElementById('alert').onclick = function() {
+      ywork.alert({
+        title: '这是标题',
+        text: '这是内容这是内容这是内容这是内容'
+      })
+    }
+
+    document.getElementById('confirm').onclick = function() {
+      ywork.confirm({
+        title: '提示',
+        text: '你要启动自爆装置？',
+        confirmText: '我想好了',
+        cancelText: '那个，我手滑了',
+        confirmColor: '#e64340',
+        cancelColor: '#999',
+        succ: function() {
+          ywork.toast({
+            text: '你点了确定',
+            icon: true
+          })
+        },
+        fail: function() {
+          ywork.toast({
+            text: '你点了取消'
+          })
+        }
+      })
+    }
+
+    document.getElementById('succ-toast').onclick = function() {
+      ywork.toast({
+        text: '请求成功',
+        icon: true,
+        duration: 1500
+      })
+    }
+
+    document.getElementById('fail-toast').onclick = function() {
+      ywork.toast()
+    }
+
+    document.getElementById('showLoading').onclick = function() {
+      ywork.showLoading({
+        text: 'DEMO演示<br>1.5秒后关闭'
+      })
+
+      setTimeout(function() {
+        ywork.hideLoading()
+      }, 1500)
+    }
+
+    document.getElementById('hideLoading').onclick = function() {
+      ywork.hideLoading()
+    }
+
+    document.getElementById('actionSheet').onclick = function() {
+      var arr = ['leo', 'jack', 'tom', 'wang']
+      ywork.actionSheet({
+        itemList: arr,
+        succ: function(res) {
+          console.log(res)
+        },
+        fail: function(res) {
+          console.log(res)
+        }
+      })
+    }
+
+    document.getElementById('updateShow').onclick = function() {
+      ywork.updateShow({
+        title: '钉钉短视频，更大更清晰',
+        text: '1，大画面全屏播放没有看潮<br>2，别人说要等到下午点<br>3，就回去了，后面看到潮水虽然没有电视播放的那么壮<br>4，但是感觉也不虚此行',
+        image: 'https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2959746299,705519044&fm=96&s=6DF40FC2176634AC3005000B030080D2',
+        buttonText: '我知道啦'
+      })
+    }
+
+    document.getElementById('setTitle').onclick = function() {
+      var r = String(Math.random() * 100).substring(0, 2)
+      ywork.setTitle('修改标题' + r)
+    }
+
+    document.getElementById('complexChoose').onclick = function() {
+      ywork.complexChoose({
+        debug: true,
+        onlyDepartment: false,
+        onlyUser: false,
+        succ: function(res) {
+          console.log(res)
+        }
+      })
+    }
+
+    document.getElementById('friendChoose').onclick = function() {
+      window.debug = true
+
+      // 默认
+      var demo0 = function() {
+        ywork.friendChoose({
+          title: '默认演示',
+          succ: function(res) {
+            ywork.log(res)
+          }
+        })
+      }
+
+      // 预选用户
+      var demo1 = function() {
+        var arr = [
+          {
+            uid: 'p0' // ID必须
+          },
+          {
+            uid: 'p2'
+          },
+          {
+            uid: 'p7'
+          }
+        ]
+
+        ywork.friendChoose({
+          title: '预选用户演示',
+          primaryList: arr,
+          succ: function(res) {
+            console.log(res)
+          }
+        })
+      }
+
+      // 可选范围
+      var demo2 = function() {
+        var arr = [
+          {
+            uid: 'p2', // ID必须
+            n: '曹丕' // name必须 , 头像可选
+          },
+          {
+            uid: 'p7',
+            n: '曹熊'
+          }
+        ]
+
+        ywork.friendChoose({
+          title: '可选范围演示',
+          resList: arr,
+          succ: function(res) {
+            console.log(res)
+          }
+        })
+      }
+
+      // 在可选范围内预选用户
+      var demo3 = function() {
+        var arr1 = [
+          {
+            uid: 'p7' // ID必须
+          }
+        ]
+
+        var arr2 = [
+          {
+            uid: 'p2', // ID必须
+            n: '曹丕' // name必须 , 头像可选
+          },
+          {
+            uid: 'p7',
+            n: '曹熊'
+          }
+        ]
+
+        ywork.friendChoose({
+          title: '在可选范围内预选用户演示',
+          primaryList: arr1,
+          resList: arr2,
+          succ: function(res) {
+            console.log(res)
+          }
+        })
+      }
+
+      ywork.actionSheet({
+        itemList: ['默认', '预选用户', '可选范围', '在可选范围内预选用户'],
+        succ: function(res) {
+          switch (res) {
+            case 0:
+              demo0()
+              break
+            case 1:
+              demo1()
+              break
+            case 2:
+              demo2()
+              break
+            case 3:
+              demo3()
+              break
+          }
+        }
+      })
+    }
+
+    document.getElementById('shareToWechatFriend').onclick = function() {
+      ywork.shareToWechatFriend()
+    }
+
+    document.getElementById('vlock').onclick = function() {
+      var list = [],
+        arr = [0, 5, 15, 25, 35, 60, 120]
+
+      // 转换成毫秒
+      for (var i = 0; i < arr.length; i++) {
+        list.push(arr[i] * 60 * 1000)
+      }
+
+      ywork.clock({
+        list: list,
+        succ: function(res) {
+          console.log('你选中的是' + res)
+        }
+      })
+    }
+  </script>
+</html>

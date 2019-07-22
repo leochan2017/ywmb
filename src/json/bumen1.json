@@ -1,0 +1,113 @@
+/*
+    首页的接口
+    没有请求参数
+
+ */
+
+// 返回如下：
+var bumenRes1 = {
+    "data": {
+        "preDep": null, // 上一级部门
+        "currDep": { // 当前部门
+            "id": "a1",
+            "name": "华北大魏有限公司"
+        },
+        "department": [{
+            "id": "b1",
+            "name": "国务院",
+            "sum": 736
+        }, {
+            "id": "b2",
+            "name": "司法部",
+            "sum": 456
+        }, {
+            "id": "b3",
+            "name": "全国武装部",
+            "sum": 88
+        }],
+        "people": [ // 返回为最近联系人
+            { "id": "p0", "avatar": "", "name": "曹叶" },
+            { "id": "p1", "avatar": "images/userpic2.png", "name": "曹植" },
+            { "id": "p2", "avatar": "", "name": "曹丕" }
+        ]
+    },
+    "errcode": 0,
+    "errmsg": "成功"
+}
+
+
+
+
+
+/* 
+    点进来的部门页接口
+    请求参数： depId部门ID
+
+*/
+
+// 返回如下：
+var bumenRes2 = {
+    "data": {
+        "preDep": { // 上一级部门
+            "id": "a1",
+            "name": "华北大魏有限公司"
+        },
+        "currDep": { // 当前部门
+            "id": "b3",
+            "name": "全国武装部"
+        },
+        "department": [{
+            "id": "c1",
+            "name": "中央禁军",
+            "sum": 65
+        }, {
+            "id": "c2",
+            "name": "皇城保安",
+            "sum": 45
+        }, {
+            "id": "c3",
+            "name": "战车部队",
+            "sum": 23
+        }],
+        "people": [ // 返回为当前部门的人员
+            { "id": "p11", "avatar": "", "name": "华歆" },
+            { "id": "p22", "avatar": "", "name": "曹仁" },
+            { "id": "p33", "avatar": "", "name": "曹真" }
+        ]
+    },
+    "errcode": 0,
+    "errmsg": "成功"
+}
+
+
+
+
+/* 
+    点进来的部门页接口
+    请求参数： depId部门ID
+
+*/
+
+// 返回如下：
+var bumenRes3 = {
+    "data": {
+        "preDep": { // 上一级部门
+            "id": "b3",
+            "name": "全国武装部"
+        },
+        "currDep": { // 当前部门
+            "id": "c1",
+            "name": "中央禁军"
+        },
+        "department": [], // 没有子部门了
+        "people": [ // 返回为当前部门的人员
+            { "id": "p44", "avatar": "", "name": "蒋济" },
+            { "id": "p55", "avatar": "", "name": "邓艾" },
+            { "id": "p66", "avatar": "", "name": "荀顗" },
+            { "id": "p77", "avatar": "", "name": "董昭" }
+        ]
+    },
+    "errcode": 0,
+    "errmsg": "成功"
+}
+

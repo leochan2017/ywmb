@@ -1,0 +1,229 @@
+/*选择接收人*/
+
+.recipient-main {
+    // padding-bottom: 2.35rem;
+    // background-color: #efeff1;
+    // width: 100%;
+    // min-height: 100%;
+    // position: fixed;
+    // top: 0;
+    background-color: #efefef;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 999;
+    &-box {
+        height: 100%;
+        overflow-y: auto;
+        padding-bottom: 2.6rem;
+        .navigation-box {
+            height: 2.2rem;
+            line-height: 2.2rem;
+            color: #222;
+            font-size: 0.9rem;
+            background-color: #fff;
+            position: relative;
+            button {
+                display: block;
+                position: relative;
+                left: 0.35rem;
+                font-size: 14px;
+                width: 5rem;
+                background-color: #fff;
+                padding: 0 15px 0 20px;
+                height: inherit;
+                line-height: 1.5;
+                text-align: left;
+                text-overflow: ellipsis;
+                word-break: break-all;
+                white-space: nowrap;
+                overflow: hidden;
+                i {
+                    position: absolute;
+                    left: 8px;
+                    z-index: 2;
+                    width: 12px;
+                    height: 12px;
+                    border-top: 2px solid #BBC1C8;
+                    border-left: 2px solid #BBC1C8;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    -webkit-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                }
+            }
+            p {
+                text-align: center;
+                line-height: 2.2rem;
+                color: #232c3f;
+                vertical-align: top;
+                position: absolute;
+                display: inline-block;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+            }
+        }
+        .search-box {
+            background-color: #fff;
+            padding: 0.75rem 1rem;
+        }
+        .search-icon {
+            display: inline-block;
+            background: url("../images/search.png") no-repeat left center;
+            background-size: 100%;
+            width: 0.75rem;
+            height: 0.725rem;
+        }
+        .input-search {
+            display: inline-block;
+            width: 90%;
+        }
+        .structure {
+            padding: 0.5rem 1rem;
+            font-size: 0.65rem;
+            color: #7a7b80;
+            background-color: #fff;
+            margin-top: 0.75rem;
+        }
+        .structure span {
+            display: inline-block;
+            margin-left: 0.25rem;
+        }
+        .dropdown-box {
+            background-color: #fff;
+            width: 100%;
+            position: relative;
+        }
+        .rowheight {
+            padding: 0 15px 0 35px;
+        }
+        /*全选*/
+        .checkall {
+            font-size: 16px;
+            color: #40b0fa;
+            height: 45px;
+            line-height: 45px;
+            margin-left: 0.975rem;
+            vertical-align: middle;
+        }
+        .down-checkright {
+            vertical-align: middle;
+        }
+        .userpic-box {
+            height: 2.65rem;
+            line-height: 2.65rem;
+            padding-left: 2.2rem;
+            vertical-align: middle;
+        }
+        .userpic-box >div {
+            color: #333;
+            font-size: 0.55rem;
+            line-height: 2.65rem;
+        }
+        .userpic-box-one {
+            padding-left: 2.825rem;
+        }
+        .userpic-box-two {
+            padding-left: 3.45rem;
+        }
+        .userpic-box img {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.45rem;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        .linkman-box {
+            background-color: #fff;
+        }
+        .linkman-box ul li {
+            padding: 0.75rem 0.5rem 0.75rem 1.75rem;
+            font-size: 14px;
+            color: #000;
+            line-height: 1.5rem;
+            img {
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 0.225rem;
+                border-radius: 50%;
+                vertical-align: middle;
+            }
+        }
+    }
+    .select-user {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #efeff1;
+        padding: 0.35rem 0.5rem;
+        width: 100%;
+        z-index: 2;
+        overflow: hidden;
+    }
+    .select-userpic {
+        width: 70%;
+        overflow-x: auto;
+        height: 2rem;
+        line-height: 2rem;
+        position: relative;
+        &>ul {
+            white-space: nowrap;
+            position: absolute;
+            left: 0;
+            font-size: 0;
+            &>li {
+                display: inline-block;
+                margin-right: 0.475rem;
+                position: relative;
+                img {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    margin-right: 0.225rem;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                }
+                .del-icon {
+                    display: block;
+                    position: absolute;
+                    left: 1rem;
+                    top: 0.2rem;
+                }
+            }
+        }
+    }
+    .stractive {
+        color: #40b0fa;
+    }
+    .userbutton {
+        background-color: #40b0fa;
+        color: #fff;
+        font-size: 0.55rem;
+        height: 1.6rem;
+        line-height: 1.6rem;
+        text-align: center;
+        width: 4.25rem;
+        display: block;
+        border-radius: 0.4rem;
+        position: absolute;
+        right: 10px;
+        top: 11px;
+    }
+    .userbutton:disabled {
+        background-color: #818283;
+        color: #f2f3f3;
+    }
+    .check-inputbox {
+        display: block;
+        position: relative;
+        width: 3.35rem;
+        height: 100%;
+        text-align: right;
+    }
+}
