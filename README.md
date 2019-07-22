@@ -1,7 +1,10 @@
-# ywmb
+## ywmb
+用于移动端的UI组件，并含有大量常用工具类方法
 
-移动端 UI 库
+## About
+嗯？？？散了吧，这项目已经老掉牙了。并在 2016 年 11 月 17 日起不再维护了。
 
-# About
+## DEMO
+[https://leochan2017.github.io/ywmb/dst/demo.html](https://leochan2017.github.io/ywmb/dst/demo.html)
 
-嗯？？？散了吧，这项目已经老掉牙并在 2016 年 11 月 17 日起不再维护了。
+## AIP DOC
