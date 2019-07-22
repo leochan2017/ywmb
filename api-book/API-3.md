@@ -92,8 +92,8 @@ ywork.uploadImage({
 #####示例代码:
 ```
 ywork.previewImage({
-	imgURL: 'http://leochan2017.github.io//logo.png',
-	imgList: ['http://leochan2017.github.io//logo1.png', 'http://leochan2017.github.io//logo2.png']
+	imgURL: 'http://leochan2017.github.io/logo.png',
+	imgList: ['http://leochan2017.github.io/logo1.png', 'http://leochan2017.github.io/logo2.png']
 });
 ```
 
@@ -203,7 +203,7 @@ ywork.share({
 	url: 'http://leochan2017.github.io/',
 	title: '刚刚写的接口，速度转',
 	content: '不转不是码农',
-	imageURL: 'http://leochan2017.github.io//logo1.png',
+	imageURL: 'http://leochan2017.github.io/logo1.png',
 });
 
 ywork.shareToWechatFriend();

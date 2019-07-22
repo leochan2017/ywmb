@@ -15,7 +15,7 @@
 #####示例代码:
 ```
 ywork.includeJs({
-	url: 'http://leochan2017.github.io//leojs.js',
+	url: 'http://leochan2017.github.io/leojs.js',
 	succ: function() {
 		console.log('加载成功');
 	}
